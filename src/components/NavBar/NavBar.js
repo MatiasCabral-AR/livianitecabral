@@ -21,8 +21,9 @@ const NavBar = () => {
                   <NavDropdown.Item className='animate slideIn' href="#action3">Diseños</NavDropdown.Item>
                   <NavDropdown.Item className='animate slideIn' href="#action4">Ofertas y Stock Inmediato</NavDropdown.Item>
                 </NavDropdown>
+                <CartLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
               </Nav>
-              <CartLogo divprops='ms-auto d-none d-lg-block' logoprops='fas fa-shopping-cart fa-2xl me-3' />
+              
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
