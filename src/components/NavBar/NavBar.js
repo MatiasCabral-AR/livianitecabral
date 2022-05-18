@@ -1,19 +1,20 @@
-import {Navbar, Container, Nav, Offcanvas, NavDropdown, Form, Button, FormControl} from 'react-bootstrap'
+import {Navbar, Container, Nav, Offcanvas, NavDropdown} from 'react-bootstrap'
 import './NavBar.css'
-import CartWidget from '../CartWidget/CartWidget'
+import CartLogo from '../CartLogo/CartLogo'
 
 const NavBar = () => {
     return (
       <Navbar key='lg' expand='lg' className="mb-3">
         <Container fluid>
           <Navbar.Brand className='f-vladimir' href="#">Livianite</Navbar.Brand>
+          <CartLogo divprops='ms-auto d-lg-none' logoprops='fas fa-shopping-cart fa-2xl me-3' />
           <Navbar.Toggle aria-controls='offcanvasNavbar-expand-lg '/>
           <Navbar.Offcanvas id='offcanvasNavbar-expand-lg' aria-labelledby='offcanvasNavbarLabel-expand-lg' placement="end" >
             <Offcanvas.Header closeButton>
               <Offcanvas.Title className='f-vladimir mx-auto' id='offcanvasNavbarLabel-expand-lg'>Menu</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-center flex-grow-1 pe-3">
+              <Nav className="justify-content-center flex-grow-1">
                 <Nav.Link className='mx-1' href="#action1">Home</Nav.Link>
                 <Nav.Link className='mx-1' href="#action2">Quienes Somos</Nav.Link>
                 <NavDropdown className='mx-1' title="Tienda" id='offcanvasNavbarDropdown-expand-lg'>
@@ -21,10 +22,7 @@ const NavBar = () => {
                   <NavDropdown.Item className='animate slideIn' href="#action4">Ofertas y Stock Inmediato</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
-              <Form className="d-flex">
-                <FormControl type="search" placeholder="Busca un producto..." className="me-2" aria-label="Search" />
-                <Button variant="light">Buscar</Button>
-              </Form>
+              <CartLogo divprops='ms-auto d-none d-lg-block' logoprops='fas fa-shopping-cart fa-2xl me-3' />
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
