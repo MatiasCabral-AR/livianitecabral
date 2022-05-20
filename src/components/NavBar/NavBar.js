@@ -23,7 +23,6 @@ const NavBar = () => {
                 </NavDropdown>
                 <CartLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
               </Nav>
-              
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
