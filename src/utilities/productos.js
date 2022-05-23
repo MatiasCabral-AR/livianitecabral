@@ -9,10 +9,4 @@ const products = [
     {id:"8", name:"Vedetinas de dama (sin costura)", price: 2500, discount: 10, src1:"/resources/img/product-images/vedetina-sc1.jpg", src2: "/resources/img/product-images/vedetina-sc2.jpg", quantity : "1"}
 ]
 
-export const getProducts = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve(products)
-        }, 2000)
-    })
-}
+export default products;
