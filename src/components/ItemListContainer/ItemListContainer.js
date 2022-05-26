@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react"
-import customFecth from "../../utilities/customFetch"
-import products from "../../utilities/productos"
-import ProductCard from "../ProductCard/ProductCard"
+import CustomFecth from "../../utilities/CustomFetch"
+import products from "../../utilities/products"
+import ProductList from "../ProductList/ProductList"
 
 
 const ItemListContainer = (props) => {
-    const [product, setProduct] = useState([])
+    const [productArray, setProduct] = useState([])
 
     useEffect(() => {
-        customFecth(2000, products)
+        CustomFecth(2000, products)
         .then(result => setProduct(result))
-    }, [product])
+    }, [productArray])
 
     return (
     <section className='d-flex flex-column'>
         <h1 className="f-vladimir display-2 text-center">{props.title}</h1>
-        <ProductCard />
+        <div className="d-flex"><ProductList products={productArray}/></div>
     </section>
     )
 }

@@ -1,13 +1,13 @@
 import {Navbar, Container, Nav, Offcanvas, NavDropdown} from 'react-bootstrap'
 import './NavBar.css'
-import CartLogo from '../CartLogo/CartLogo'
+import DivLogo from '../DivLogo/DivLogo'
 
 const NavBar = () => {
     return (
       <Navbar key='lg' expand='lg' className="mb-3">
         <Container fluid>
           <Navbar.Brand className='f-vladimir' href="#">Livianite</Navbar.Brand>
-          <CartLogo divprops='ms-auto d-lg-none' logoprops='fas fa-shopping-cart fa-2xl me-3' />
+          <DivLogo divprops='ms-auto d-lg-none' logoprops='fas fa-shopping-cart fa-2xl me-3' />
           <Navbar.Toggle aria-controls='offcanvasNavbar-expand-lg '/>
           <Navbar.Offcanvas id='offcanvasNavbar-expand-lg' aria-labelledby='offcanvasNavbarLabel-expand-lg' placement="end" >
             <Offcanvas.Header closeButton>
@@ -21,7 +21,7 @@ const NavBar = () => {
                   <NavDropdown.Item className='animate slideIn' href="#action3">Diseños</NavDropdown.Item>
                   <NavDropdown.Item className='animate slideIn' href="#action4">Ofertas y Stock Inmediato</NavDropdown.Item>
                 </NavDropdown>
-                <CartLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
+                <DivLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
