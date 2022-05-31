@@ -33,4 +33,10 @@ const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {
     )
 }
 
+ItemCount.defaultProps = {
+    initial: '0',
+    stock: '10',
+    buttonDisplay:'false'
+}
+
 export default ItemCount;
