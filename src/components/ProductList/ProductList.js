@@ -1,11 +1,14 @@
 import React from "react"
 import ProductCard from "../ProductCard/ProductCard";
+import { Row } from "react-bootstrap";
 
 function ProductList ({products}){
     return(
-        products.map(product => (
-            <ProductCard className="d-flex justify-content-center align-items-center" key={product.id} props={product}/>
-        ))
+        <Row>
+        {products.map(product => (
+            <ProductCard className="" key={product.id} props={product}/>
+        ))}
+        </Row>
     )
 }
 

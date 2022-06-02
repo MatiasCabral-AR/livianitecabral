@@ -22,14 +22,14 @@ const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {
     }
     
     return (
-        <Container className='d-flex flex-column'>
-            <Container className='d-flex justify-content-center'>
-                <Button size='lg' onClick={decrementCant} variant="dark">-</Button>
-                <span className='mx-4 display-4'>{cant}</span>
-                <Button size='lg' onClick={incrementCant} variant="dark">+</Button>
-            </Container>
-            {buttonDisplay === 'true' && <Button onClick={AddQuantity} className="mt-2" variant="primary">{buttonText}</Button>}
-        </Container>
+            <div >
+                <Container className='d-flex justify-content-center'>
+                    <Button size='lg' onClick={decrementCant} variant="dark">-</Button>
+                    <span className='mx-4 display-4'>{cant}</span>
+                    <Button size='lg' onClick={incrementCant} variant="dark">+</Button>
+                </Container>
+                {buttonDisplay === 'true' && <Button onClick={AddQuantity} className="mt-2" variant="primary">{buttonText}</Button>}
+            </div>
     )
 }
 
