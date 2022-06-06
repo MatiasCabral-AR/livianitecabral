@@ -1,21 +1,21 @@
 import React from "react";
-import { Card, Button, Toast } from "react-bootstrap";
+import { Col , Button} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
+import onAdd from "../../utilities/onAdd";
+import './ProductCard.css';
+import { Link } from "react-router-dom";
 
-function onAdd(itemCount) {
-    console.log(`Items agregados al carrito : ${itemCount}`)
-}
-
-function ProductCard({id, name, price, discount, src1, src2}){
+function ProductCard({props}){
+    let {id, name, price, src1, src2} = props
     return(
-        <Card id={id} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={src1} />
-            <Card.Body className="d-flex flex-column">
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>{price}</Card.Text>
+        <Col lg={3} md={4} sm={6} className='card d-flex align-items-center justify-content-center' key={id} style={{backgroundImage:`url(${src1})`, backgroundRepeat:"no-repeat", backgroundPosition:"center"}}>
+            <div className="card-content">
+                <p className="card-title">{name}</p>
+                <p className="card-price">${price}</p>
                 <ItemCount initial='0' stock='10' buttonDisplay='true' buttonText='Agregar al Carrito' onAdd={onAdd} />
-            </Card.Body>
-        </Card>
+                <Link to={`/product/${id}`}><Button className="cart-button">Ver producto</Button></Link>
+            </div>
+        </Col>
     )
 }
 

@@ -1,9 +1,9 @@
-const customFecth = (time, promise) => {
+function CustomFetch (time, task){
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(promise)
+            resolve(task)
         }, time)
     })
 }
 
-export default customFecth;
+export default CustomFetch;
