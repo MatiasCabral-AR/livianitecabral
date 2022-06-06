@@ -1,5 +1,6 @@
 import {Container, Button} from 'react-bootstrap';
 import React, {useState} from 'react';
+import './ItemCount.css'
 
 const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {    
     // Destructuring usestate to use value and function inside it
@@ -22,13 +23,13 @@ const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {
     }
     
     return (
-            <div >
+            <div className='d-flex flex-column justify-content-center'>
                 <Container className='d-flex justify-content-center'>
-                    <Button size='lg' onClick={decrementCant} variant="dark">-</Button>
-                    <span className='mx-4 display-4'>{cant}</span>
-                    <Button size='lg' onClick={incrementCant} variant="dark">+</Button>
+                    <Button size='m' onClick={decrementCant} variant="dark">-</Button>
+                    <span className='mx-4 display-5 text-light'>{cant}</span>
+                    <Button size='m' onClick={incrementCant} variant="dark">+</Button>
                 </Container>
-                {buttonDisplay === 'true' && <Button onClick={AddQuantity} className="mt-2" variant="primary">{buttonText}</Button>}
+                {buttonDisplay === 'true' && <Button onClick={AddQuantity} className="mt-2 cart-button">{buttonText}</Button>}
             </div>
     )
 }

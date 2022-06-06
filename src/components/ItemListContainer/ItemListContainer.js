@@ -13,8 +13,8 @@ const ItemListContainer = (props) => {
     }, [productsArray])
 
     return (
-    <section className='d-flex flex-column'>
-        <h1 className="f-vladimir display-2 text-center">{props.title}</h1>
+    <section className='d-flex flex-column justify-content-center align-items-center'>
+        <h1 className="f-vladimir display-2 text-center text-light">{props.title}</h1>
         <ProductList products={productsArray}/>
     </section>
     )

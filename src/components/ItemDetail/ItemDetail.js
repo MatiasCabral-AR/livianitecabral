@@ -1,20 +1,45 @@
 import React from "react"
-import {Card} from "react-bootstrap";
+import {Row, Container, Col} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
 import onAdd from "../../utilities/onAdd";
+import './ItemDetail.css'
 
 
-function ItemDetail({product}){
+function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
     return(
-        <Card id={product?.id} style={{ width: '18rem' }}>
-            <Card.Img variant="top" src={product?.src1} />
-            <Card.Body className="d-flex flex-column">
-                <Card.Title>{product?.name}</Card.Title>
-                <Card.Subtitle>{product?.price}</Card.Subtitle>
-                <Card.Text>{product?.detail}</Card.Text>
-                <ItemCount initial='0' stock='10' buttonDisplay='true' buttonText='Agregar al Carrito' onAdd={onAdd} />
-            </Card.Body>
-        </Card>
+        <Container>
+            <Col lg={8} md={8} sm={10} xs={12} className='border p-3 main-section bg-dark'>
+                <Row className="m-0">
+                    <Col lg={4} className='left-side-product-box pb-3'>
+                        <img src={src1} alt="Foto de producto" />
+                        <span className="sub-img">
+                            <img src={src2} alt="" />
+                        </span>
+                    </Col>
+                    <Col lg={8}>
+                        <div className="right-side-pro-detail p-3 m-0">
+                            <Row>
+                                <Col lg={12}>
+                                    <span>Que meto aca ?</span>
+                                    <p className="m-0 p-0">{name}</p>
+                                </Col>
+                                <Col lg={12}>
+                                    <p className="p-0 m-0 price-pro">${price}</p>
+                                    <hr className="p-0 m-0"/>
+                                </Col>
+                                <Col lg={12}>
+                                    <h5>Detalles del Producto</h5>
+                                    <span>{detail}</span>
+                                </Col>
+                                <Col lg={12}>
+                                    <ItemCount initial='0' stock={quantity} buttonDisplay='true' buttonText='Agregar al Carrito' onAdd={onAdd} />
+                                </Col>
+                            </Row>
+                        </div>
+                    </Col>
+                </Row>
+            </Col>
+        </Container>
         )
 }
 

@@ -1,0 +1,29 @@
+.main-section {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 5%);
+}
+
+.left-side-product-box img {
+    width: 100%;
+}
+
+.left-side-product-box .sub-img img {
+    margin-top: 5px;
+    width: 83px;
+    height: 100px;
+}
+
+.right-side-pro-detail span {
+    font-size: 15px;
+}
+
+.right-side-pro-detail p {
+    font-size: 25px;
+    color: #a1a1a1;
+}
+
+.right-side-pro-detail .price-pro {
+    color: #dac2fe;
+}

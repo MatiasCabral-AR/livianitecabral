@@ -1,12 +1,13 @@
 import React from "react"
 import ProductCard from "../ProductCard/ProductCard";
 import { Row } from "react-bootstrap";
+import './ProductList.css'
 
 function ProductList ({products}){
     return(
-        <Row>
+        <Row className="productList">
         {products.map(product => (
-            <ProductCard className="" key={product.id} props={product}/>
+            <ProductCard key={product.id} props={product}/>
         ))}
         </Row>
     )
