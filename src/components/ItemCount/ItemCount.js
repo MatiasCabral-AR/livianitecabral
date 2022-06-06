@@ -2,8 +2,7 @@ import {Container, Button} from 'react-bootstrap';
 import React, {useState} from 'react';
 import './ItemCount.css'
 
-const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {    
-    // Destructuring usestate to use value and function inside it
+const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {
     const [cant, itemCant] = useState(parseInt(initial))
     
     function decrementCant(){
