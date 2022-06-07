@@ -1,4 +1,5 @@
 .main-section {
+    background-color: #FFFAFA;
     position: absolute;
     left: 50%;
     right: 50%;
@@ -21,9 +22,9 @@
 
 .right-side-pro-detail p {
     font-size: 25px;
-    color: #a1a1a1;
+    color: #3a3a3a;
 }
 
 .right-side-pro-detail .price-pro {
-    color: #dac2fe;
+    color: #b686fd;
 }

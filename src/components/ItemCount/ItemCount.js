@@ -25,7 +25,7 @@ const ItemCount = ({initial, stock, onAdd, buttonDisplay, buttonText}) => {
             <div className='d-flex flex-column justify-content-center'>
                 <Container className='d-flex justify-content-center'>
                     <Button size='m' onClick={decrementCant} variant="dark">-</Button>
-                    <span className='mx-4 display-5 text-light'>{cant}</span>
+                    <span className='mx-4 display-5 text-dark'>{cant}</span>
                     <Button size='m' onClick={incrementCant} variant="dark">+</Button>
                 </Container>
                 {buttonDisplay === 'true' && <Button onClick={AddQuantity} className="mt-2 cart-button">{buttonText}</Button>}

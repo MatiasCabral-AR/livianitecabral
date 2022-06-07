@@ -8,7 +8,7 @@ import './ItemDetail.css'
 function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
     return(
         <Container>
-            <Col lg={8} md={8} sm={10} xs={12} className='border p-3 main-section bg-dark'>
+            <Col lg={8} md={8} sm={10} xs={12} className='border p-3 main-section'>
                 <Row className="m-0">
                     <Col lg={4} className='left-side-product-box pb-3'>
                         <img src={src1} alt="Foto de producto" />
@@ -20,7 +20,6 @@ function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
                         <div className="right-side-pro-detail p-3 m-0">
                             <Row>
                                 <Col lg={12}>
-                                    <span>Que meto aca ?</span>
                                     <p className="m-0 p-0">{name}</p>
                                 </Col>
                                 <Col lg={12}>
