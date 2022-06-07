@@ -4,9 +4,11 @@ import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { useState } from 'react';
 
 function App() {
-
+  const [cart, setCart] = useState()
+  
   return (
     <div className="App">
       <BrowserRouter>

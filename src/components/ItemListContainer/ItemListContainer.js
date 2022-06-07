@@ -6,17 +6,19 @@ import ProductList from "../ProductList/ProductList"
 
 const ItemListContainer = (props) => {
     const [productsArray, setProducts] = useState([])
+    const [load, setLoad] = useState(true)
 
     useEffect(() => {
         CustomFetch(2000, products)
         .then(result => setProducts(result))
     }, [productsArray])
+        return (
+            <section className='d-flex flex-column justify-content-center align-items-center'>
+                <h1 className="f-vladimir display-2 text-center text-light">{props.title}</h1>
+                <ProductList products={productsArray}/>
+            </section>
+            )
 
-    return (
-    <section className='d-flex flex-column justify-content-center align-items-center'>
-        <h1 className="f-vladimir display-2 text-center text-light">{props.title}</h1>
-        <ProductList products={productsArray}/>
-    </section>
-    )
+    
 }
 export default ItemListContainer
