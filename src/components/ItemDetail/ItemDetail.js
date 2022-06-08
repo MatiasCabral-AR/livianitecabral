@@ -1,7 +1,6 @@
 import React from "react"
 import {Row, Container, Col} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
-import onAdd from "../../utilities/onAdd";
 import './ItemDetail.css'
 
 
@@ -31,7 +30,7 @@ function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
                                     <span>{detail}</span>
                                 </Col>
                                 <Col lg={12}>
-                                    {quantity > 0 ? <ItemCount initial='0' stock={quantity} buttonDisplay='true' buttonText='Agregar al Carrito' onAdd={onAdd} /> : <div><hr/><h5>No hay stock de este producto</h5></div>}
+                                    {quantity > 0 ? <ItemCount stock={quantity} buttonDisplay='true' buttonText='Agregar al Carrito' product={{id, name, price, discount, src1, quantity}}/> : <div><hr/><h5>No hay stock de este producto</h5></div>}
                                 </Col>
                             </Row>
                         </div>

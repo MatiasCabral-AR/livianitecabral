@@ -5,7 +5,7 @@ import Loader from "../Loader/Loader"
 import { useParams } from "react-router-dom"
 
 
-const ItemListContainer = ({title}) => {
+const ItemListContainer = ({title, setCart}) => {
     const [productsArray, setProducts] = useState([])
     const {category} = useParams()
     const [load, setLoad] = useState(true)
@@ -27,7 +27,7 @@ const ItemListContainer = ({title}) => {
     return (
         <section className='d-flex flex-column justify-content-center align-items-center'>
             <h1 className="f-vladimir display-2 text-center text-dark">{titulo}</h1>
-            <ProductList products={productsArray}/>
+            <ProductList products={productsArray} setCart={setCart}/>
         </section>
         )
 

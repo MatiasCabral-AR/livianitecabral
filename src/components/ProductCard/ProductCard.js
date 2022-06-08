@@ -1,7 +1,6 @@
 import React from "react";
 import { Col , Button} from "react-bootstrap";
 import ItemCount from "../ItemCount/ItemCount";
-import onAdd from "../../utilities/onAdd";
 import './ProductCard.css';
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ function ProductCard({props}){
             <div className="card-content">
                 <p className="card-title">{name}</p>
                 {discount > 0 ? <div><p className="card-price text-muted text-decoration-line-through">${price}</p><p className="card-price">${(price - (price*discount)/100)}</p></div> : <p className="card-price">${price}</p>}
-                <ItemCount initial='0' stock={quantity} buttonDisplay='true' buttonText='Agregar al Carrito' onAdd={onAdd} />
+                <ItemCount stock={quantity} product={{id, name, price, discount, src1, quantity}} buttonText='Agregar al Carrito' />
                 <Link to={`/product/${id}`}><Button className="cart-button">Ver producto</Button></Link>
             </div>
         </Col>
