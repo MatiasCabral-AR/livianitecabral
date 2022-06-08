@@ -4,6 +4,7 @@ import { Row } from "react-bootstrap";
 import './ProductList.css'
 
 function ProductList ({products}){
+    console.log(products)
     return(
         <Row className="productList">
         {products.map(product => (

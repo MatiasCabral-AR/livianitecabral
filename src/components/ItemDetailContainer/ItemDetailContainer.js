@@ -1,19 +1,20 @@
 import { useEffect, useState, React } from "react"
-import products from "../../utilities/products";
+import {getProductById} from "../../utilities/products";
 import CustomFetch from "../../utilities/CustomFetch";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import getProductById from "../../utilities/getProductById";
+import getProducts from "../../utilities/getProducts";
 import Loader from "../Loader/Loader";
 
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
     const [product, setProduct] = useState([])
     const {id} = useParams()
     const [load, setLoad] = useState(true)
+    console.log(id)
 
     useEffect(() => {
-        CustomFetch(2000, getProductById(products, id))
+        getProductById(id)
         .then(result => setProduct(result)).finally(() => {setLoad(false)})
     }, [])
     if(load){

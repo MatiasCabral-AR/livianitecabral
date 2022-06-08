@@ -1,8 +1,7 @@
 import {Navbar, Container, Nav, Offcanvas, NavDropdown} from 'react-bootstrap'
 import './NavBar.css'
 import DivLogo from '../DivLogo/DivLogo'
-import { Link } from 'react-router-dom'
-import App from '../../App'
+import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
@@ -17,11 +16,12 @@ const NavBar = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1">
-                <Link to='/'><Nav.Link as={'div'} className='mx-1' href="#action1">Home</Nav.Link></Link>
-                <Link to='/quienes-somos'><Nav.Link as={'div'} className='mx-1' href="#action2">Quienes Somos</Nav.Link></Link>
+                <NavLink to='/' className={({isActive}) => isActive ? 'd-none' : ''}><Nav.Link as={'div'} className='mx-1'>Home</Nav.Link></NavLink>
+                <NavLink to='/quienes-somos' className={({isActive}) => isActive ? 'd-none' : ''}><Nav.Link as={'div'} className='mx-1'>Quienes Somos</Nav.Link></NavLink>
                 <NavDropdown className='mx-1' title="Tienda" id='offcanvasNavbarDropdown-expand-lg'>
-                  <NavDropdown.Item className='animate slideIn' href="#action3">Diseños</NavDropdown.Item>
-                  <NavDropdown.Item className='animate slideIn' href="#action4">Ofertas y Stock Inmediato</NavDropdown.Item>
+                  <NavLink to='/category/Ofertas' className={({isActive}) => isActive ? 'd-none' : ''}><NavDropdown.Item as={'div'} className='animate slideIn'>Ofertas</NavDropdown.Item></NavLink>
+                  <NavLink to='/category/Lenceria' className={({isActive}) => isActive ? 'd-none' : ''}><NavDropdown.Item as={'div'} className='animate slideIn'>Lenceria</NavDropdown.Item></NavLink>
+                  <NavLink to='/category/Interior' className={({isActive}) => isActive ? 'd-none' : ''}><NavDropdown.Item as={'div'} className='animate slideIn'>Ropa Interior</NavDropdown.Item></NavLink>
                 </NavDropdown>
                 <DivLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
               </Nav>

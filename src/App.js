@@ -15,7 +15,8 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path='/' element={<ItemListContainer title='Livianite Lenceria'/>}/>
-          <Route path='/product/:id' element={<ItemDetailContainer title='Detalle del producto'/>}/>
+          <Route path='/category/:category' element={<ItemListContainer/>} />
+          <Route path='/product/:id' element={<ItemDetailContainer/>}/>
           <Route path='/quienes-somos' element={<h1 className='text-center text-success'>Quienes Somos</h1>}/>
           <Route path='*' element={<h1 className='text-center text-warning'>Pagina no encontrada</h1>}/>
         </Routes>
