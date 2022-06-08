@@ -10,7 +10,7 @@ const products = [
     {id: 9, name: 'Conjunto Corpiño deportivo + Vedetina', price: 2300, discount: 0, src1: '/resources/img/conjuntoDep-1.jpg', src2: '/resources/img/conjuntoDep-2.jpg', detail: 'descripcion del producto', quantity: 10, category: 'Interior'},
     {id: 10, name: 'Bikini Verde', price: 2400, discount: 0, src1: '/resources/img/bikini-1.jpg', src2: '/resources/img/bikini-2.jpg', detail: 'descripcion del producto', quantity: 10, category: 'Interior'},
     {id: 11, name: 'Vedetina', price: 1000, discount: 10, src1: '/resources/img/vedetina-1.jpg', src2: '/resources/img/vedetina-2.jpg', detail: 'descripcion del producto', quantity: 10, category: 'Interior'},
-    {id: 12, name: 'Vedetina Triple Tira', price: 1200, discount: 0, src1: '/resources/img/vedetina-triple-1.jpg', src2: '/resources/img/vedetina-triple-2.jpg', detail: 'descripcion del producto', quantity: 10, category: 'Lenceria'}    
+    {id: 12, name: 'Vedetina Triple Tira', price: 1200, discount: 0, src1: '/resources/img/vedetina-triple-1.jpg', src2: '/resources/img/vedetina-triple-2.jpg', detail: 'descripcion del producto', quantity: 0, category: 'Lenceria'}    
 ]
 
 export function getProducts(){

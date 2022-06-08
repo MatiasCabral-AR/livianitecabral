@@ -11,14 +11,10 @@ const ItemListContainer = ({title}) => {
     const [load, setLoad] = useState(true)
 
     useEffect(() => {
-        if(!category){
-            getProducts().then(result => setProducts(result)).finally(() => setLoad(false))
-        }
-        else if(category === 'Ofertas'){
-            getProductsOnSale().then(result => setProducts(result)).finally(() => setLoad(false))
-        }else{
-            getProductsByCategory(category).then(result => setProducts(result)).finally(() => setLoad(false))
-        }
+        setLoad(true)
+        if(!category){ getProducts().then(result => setProducts(result)).finally(() => setLoad(false))}
+        else if(category === 'Ofertas'){ getProductsOnSale().then(result => setProducts(result)).finally(() => setLoad(false))
+        }else{ getProductsByCategory(category).then(result => setProducts(result)).finally(() => setLoad(false)) }
     }, [category])
     let titulo = title ? title : `${category}`
     if(load){

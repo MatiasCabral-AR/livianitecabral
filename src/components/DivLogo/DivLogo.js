@@ -1,6 +1,6 @@
 const DivLogo = (props) => {
     return  (
-                <div className={props.divprops}>
+                <div>
                     <i className={props.logoprops}></i>
                 </div>
             )

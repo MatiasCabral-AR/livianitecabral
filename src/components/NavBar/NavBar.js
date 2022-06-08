@@ -8,7 +8,7 @@ const NavBar = () => {
       <Navbar key='lg' expand='lg' className="mb-3">
         <Container fluid>
           <Link to='/'><Navbar.Brand as={'div'} className='f-vladimir'>Livianite</Navbar.Brand></Link>
-          <DivLogo divprops='ms-auto d-lg-none' logoprops='fas fa-shopping-cart fa-2xl me-3' />
+          <Link to='/cart' className='ms-auto d-lg-none text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
           <Navbar.Toggle aria-controls='offcanvasNavbar-expand-lg '/>
           <Navbar.Offcanvas id='offcanvasNavbar-expand-lg' aria-labelledby='offcanvasNavbarLabel-expand-lg' placement="end" >
             <Offcanvas.Header closeButton>
@@ -23,7 +23,7 @@ const NavBar = () => {
                   <NavLink to='/category/Lenceria' className={({isActive}) => isActive ? 'd-none' : ''}><NavDropdown.Item as={'div'} className='animate slideIn'>Lenceria</NavDropdown.Item></NavLink>
                   <NavLink to='/category/Interior' className={({isActive}) => isActive ? 'd-none' : ''}><NavDropdown.Item as={'div'} className='animate slideIn'>Ropa Interior</NavDropdown.Item></NavLink>
                 </NavDropdown>
-                <DivLogo divprops='ms-auto justify-content-center align-items-center d-none d-lg-flex' logoprops='fas fa-shopping-cart fa-2xl me-3' />
+                <Link to='/cart' className='ms-auto justify-content-center align-items-center d-none d-lg-flex text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

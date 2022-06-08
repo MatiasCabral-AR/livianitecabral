@@ -6,7 +6,7 @@ import './ProductCard.css';
 import { Link } from "react-router-dom";
 
 function ProductCard({props}){
-    let {id, name, price, src1, src2, discount, quantity} = props
+    let {id, name, price, src1, discount, quantity} = props
     return(
         <Col lg={3} md={4} sm={6} className='card d-flex align-items-center justify-content-center' key={id} style={{backgroundImage:`url(${src1})`, backgroundRepeat:"no-repeat", backgroundPosition:"center"}}>
             <div className="card-content">

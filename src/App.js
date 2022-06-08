@@ -3,6 +3,7 @@ import NavBar from './components/NavBar/NavBar'
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/product/:id' element={<ItemDetailContainer/>}/>
           <Route path='/quienes-somos' element={<h1 className='text-center text-success'>Quienes Somos</h1>}/>
           <Route path='*' element={<h1 className='text-center text-warning'>Pagina no encontrada</h1>}/>
+          <Route path='/cart' element={<Cart/>} />
         </Routes>
       </BrowserRouter>
     </div>
