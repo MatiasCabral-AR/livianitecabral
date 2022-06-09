@@ -2,7 +2,6 @@ import {Container, Button} from 'react-bootstrap';
 import React, {useState, useContext} from 'react';
 import './ItemCount.css';
 import productCheck from '../../utilities/productCheck';
-import checkProductPrice from '../../utilities/checkProductPrice';
 import CartContext from '../../context/CartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -10,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
     const [cant, itemCant] = useState(1)
     const {cart, setCart} = useContext(CartContext)
-    console.log(product.quantity)
     
     function decrementCant(){
         if(cant > 1){
@@ -25,22 +23,21 @@ const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
     }
 
     function onAdd() {
-        product = {cant, ...product}
-        if(productCheck(cart, product)){
-            let cartProduct = cart.find(element => element.id == product.id)
-            cartProduct.cant += product.cant
-            if(cartProduct.cant > product.quantity){
-                toast("Has excedido la cantidad de productos que hay en stock")
-            }else{
-                let index = cart.indexOf(cartProduct)
-                cart[index].cant = cartProduct.cant
-                toast("Cantidad actualizada")
-            }   
+        if(!productCheck(cart, product)){
+            toast('Producto Agregado al Carrito')
+            product.cant = cant
+            setCart([...cart, product])
         }else{
-            setCart([...cart, checkProductPrice(product)])
-            toast("Producto Agregado a Carrito")
+            let checkProduct = cart.find(element => element.id === product.id)
+            let checkCant = checkProduct.cant + cant
+            if(checkCant > stock){
+                toast(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)
+            }else{
+                toast('Contenido del Carrito Actualizado')
+                let index = cart.findIndex((element) => element.id === checkProduct.id)
+                cart[index].cant = checkCant
+            }
         }
-        
     }
     
     return (

@@ -6,7 +6,6 @@ import CartContext from "../../context/CartContext";
 
 function Cart(){
     const {cart} = useContext(CartContext)
-    console.log(cart)
     return(
         <>
         <p className="cart-title">Carrito</p>
