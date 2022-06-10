@@ -5,7 +5,6 @@ import './Cart.css';
 import CartContext from "../../context/CartContext";
 
 function Cart(){
-    const {cart} = useContext(CartContext)
     return(
         <>
         <p className="cart-title">Carrito</p>
@@ -13,9 +12,9 @@ function Cart(){
             <div className='cart-details d-flex flex-column'>
                 <p>Detalles del Carrito</p>
                 <hr/>
-                <CartContent cart={cart}/>
+                <CartContent/>
             </div>
-            <CartPayment cart={cart}/>
+            <CartPayment/>
         </div>
         </>
     )

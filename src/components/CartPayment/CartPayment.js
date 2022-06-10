@@ -1,17 +1,32 @@
-function CartPayment({cart}){
-        let total = 0
+import { useEffect, useContext, useState } from "react"
+import CartContext from "../../context/CartContext";
+
+function CartPayment(){
+    const {cart, setCart} = useContext(CartContext)
+    const [cartTotal, setTotal] = useState(0)
+    useEffect(() =>{
+        total()
+    }, [cart]);
+    const total = () => {
+        let totalVal = 0;
         cart.forEach(element => {
-            total = total += (element.price*element.cant)
-        });
+            totalVal = totalVal += (element.price*element.cant)})
+        setTotal(totalVal)
+        }
+    function deleteCart(){
+        setCart([])
+    }
+
     return(
         <aside className="cart-payment">
             <div className="cart-payment-buyButton">
                 <button className="cart-payment-buyButton-button">Comprar</button>
+                <button className="cart-payment-buyButton-button" onClick={deleteCart}>Borrar Carrito</button>
             </div>
             <hr/>
             <div className="cart-payment-subTotal">
                 <p className="cart-payment-subTotal-title">Sub Total</p>
-                <p className="cart-payment-subTotal-price">{total}</p>
+                <p className="cart-payment-subTotal-price">{cartTotal}</p>
             </div>
             <div className="cart-payment-shipment">
                 <div className="cart-payment-shipment-select">
