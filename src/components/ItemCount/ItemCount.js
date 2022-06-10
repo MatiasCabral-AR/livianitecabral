@@ -24,16 +24,19 @@ const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
 
     function onAdd() {
         if(!productCheck(cart, product)){
-            toast('Producto Agregado al Carrito')
+            /*toast('Producto Agregado al Carrito')*/
+            console.log('Producto Agregado al Carrito')
             product.cant = cant
             setCart([...cart, product])
         }else{
             let checkProduct = cart.find(element => element.id === product.id)
             let checkCant = checkProduct.cant + cant
             if(checkCant > stock){
-                toast(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)
+                console.log(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)
+                /*toast(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)*/
             }else{
-                toast('Contenido del Carrito Actualizado')
+                console.log('Contenido del Carrito Actualizado')
+                /*toast('Contenido del Carrito Actualizado')*/
                 let index = cart.findIndex((element) => element.id === checkProduct.id)
                 cart[index].cant = checkCant
             }
