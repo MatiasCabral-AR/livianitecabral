@@ -7,12 +7,13 @@ function CartPayment(){
     useEffect(() =>{
         total()
     }, [cart]);
-    const total = () => {
+    function total(){
         let totalVal = 0;
         cart.forEach(element => {
             totalVal = totalVal += (element.price*element.cant)})
         setTotal(totalVal)
         }
+    //Funcion para borrar el carrito (setearlo)
     function deleteCart(){
         setCart([])
     }

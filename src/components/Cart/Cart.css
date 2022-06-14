@@ -52,14 +52,14 @@
 .cart-payment-buyButton {
       display: flex;
       justify-content: center; }
-.cart-payment-buyButton .cart-payment-buyButton-button {
+.cart-payment-buyButton-button {
         width: 70%;
         border-style: none;
         margin: .3rem;
         border-radius: 8px;
         background-color: #b686fd;
         transition: color 300ms; }
-.cart-payment-buyButton .cart-payment-buyButton-button:hover {
+.cart-payment-buyButton-button:hover {
           color: #fff;
           box-shadow: 0 0 5px #b686fd; }
 .cart-payment-subTotal-title {
