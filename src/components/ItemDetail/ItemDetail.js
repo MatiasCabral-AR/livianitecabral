@@ -4,16 +4,18 @@ import ItemCount from "../ItemCount/ItemCount";
 import './ItemDetail.css'
 
 
-function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
+function ItemDetail({id, name, price, discount, src1, src2, src3, src4, description, stock}){
     return(
         <Container>
             <Col lg={8} md={8} sm={10} xs={12} className='border p-3 main-section'>
                 <Row className="m-0">
                     <Col lg={4} className='left-side-product-box pb-3'>
                         <img src={src1} alt="Foto de producto" />
-                        <span className="sub-img">
+                        <div className="sub-img">
                             <img src={src2} alt="" />
-                        </span>
+                            <img src={src3} alt="" />
+                            <img src={src4} alt="" />
+                        </div>
                     </Col>
                     <Col lg={8}>
                         <div className="right-side-pro-detail p-3 m-0">
@@ -27,10 +29,16 @@ function ItemDetail({id, name, price, discount, src1, src2, detail, quantity}){
                                 </Col>
                                 <Col lg={12}>
                                     <h5>Detalles del Producto</h5>
-                                    <span>{detail}</span>
+                                    <div className="d-flex flex-column">
+                                        <span>- {description[0]}</span>
+                                        <span>- {description[1]}</span>
+                                        <span>- {description[2]}</span>
+                                        <span>- {description[3]}</span>
+                                        <span>- {description[4]}</span>
+                                    </div>
                                 </Col>
                                 <Col lg={12}>
-                                    {quantity > 0 ? <ItemCount stock={quantity} buttonDisplay='true' buttonText='Agregar al Carrito' product={{id, name, price, discount, src1, quantity}}/> : <div><hr/><h5>No hay stock de este producto</h5></div>}
+                                    {stock > 0 ? <ItemCount stock={stock} buttonDisplay='true' buttonText='Agregar al Carrito' product={{id, name, price, discount, src1, stock}}/> : <div><hr/><h5>No hay stock de este producto</h5></div>}
                                 </Col>
                             </Row>
                         </div>

@@ -1,8 +1,9 @@
 import { useEffect, useState, React } from "react"
-import {getProductById} from "../../utilities/products";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
+import { getDoc, doc } from "firebase/firestore";
+import { database } from "../../firebase";
 
 
 const ItemDetailContainer = () => {
@@ -12,9 +13,18 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoad(true)
-        getProductById(id)
-        .then(result => setProduct(result)).finally(() => {setLoad(false)})
-    }, [])
+        getDoc(doc(database, 'products', id))
+        .then(result => {
+            const product = { id : result.id, ...result.data()}
+            setProduct(product)
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        .finally(() => {
+            setLoad(false)
+        }) 
+    }, [id])
     if(load){
         return(
             <section className='d-flex flex-column'>

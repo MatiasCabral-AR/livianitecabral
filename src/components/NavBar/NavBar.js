@@ -1,13 +1,15 @@
-import {Navbar, Container, Nav, Offcanvas, NavDropdown} from 'react-bootstrap'
+import {Navbar, Container, Nav, Offcanvas} from 'react-bootstrap'
 import './NavBar.css'
 import DivLogo from '../DivLogo/DivLogo'
 import { Link, NavLink } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-      <Navbar key='lg' expand='lg' className="mb-3">
-        <Container fluid>
-          <Link to='/' className='text-decoration-none'><Navbar.Brand as={'div'} className='f-vladimir'>Livianite</Navbar.Brand></Link>
+      <Navbar className="d-flex flex-column mb-3 fullnav" key='lg' expand='lg'>
+        <Container fluid className='d-flex justify-content-center'>
+        <Link to='/' className='text-decoration-none'><Navbar.Brand as={'div'} className='f-futurism'>TechWearClub AR</Navbar.Brand></Link>
+        </Container>
+        <Container fluid >
           <Link to='/cart' className='ms-auto d-lg-none text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
           <Navbar.Toggle aria-controls='offcanvasNavbar-expand-lg '/>
           <Navbar.Offcanvas id='offcanvasNavbar-expand-lg' aria-labelledby='offcanvasNavbarLabel-expand-lg' placement="end" >
@@ -15,15 +17,14 @@ const NavBar = () => {
               <Offcanvas.Title className='f-vladimir mx-auto' id='offcanvasNavbarLabel-expand-lg'>Menu</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="justify-content-center flex-grow-1">
-                <NavLink to='/' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none'}><Nav.Link as={'div'} className='mx-1'>Home</Nav.Link></NavLink>
-                <NavLink to='/quienes-somos' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none'}><Nav.Link as={'div'} className='mx-1'>Quienes Somos</Nav.Link></NavLink>
-                <NavDropdown className='mx-1' title="Tienda" id='offcanvasNavbarDropdown-expand-lg'>
-                  <NavLink to='/category/Ofertas' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none'}><NavDropdown.Item as={'div'} className='animate slideIn'>Ofertas</NavDropdown.Item></NavLink>
-                  <NavLink to='/category/Lenceria' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none'}><NavDropdown.Item as={'div'} className='animate slideIn'>Lenceria</NavDropdown.Item></NavLink>
-                  <NavLink to='/category/Interior' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none'}><NavDropdown.Item as={'div'} className='animate slideIn'>Ropa Interior</NavDropdown.Item></NavLink>
-                </NavDropdown>
-                <Link to='/cart' className='ms-auto justify-content-center align-items-center d-none d-lg-flex text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
+              <Nav className="justify-content-center flex-grow-1 pb-1">
+                <NavLink to='/' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none text-dark f-futurismL mx-3'}>Home</NavLink>
+                <NavLink to='/category/Ofertas' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Ofertas</NavLink>
+                <NavLink to='/category/Buzo' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Buzos</NavLink>
+                <NavLink to='/category/Remera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Remeras</NavLink>
+                <NavLink to='/category/Pantalon' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Pantalones</NavLink>
+                <NavLink to='/category/Campera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Camperas</NavLink>
+                <Link to='/cart' className='position-absolute end-0 align-items-center d-none d-lg-flex text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>

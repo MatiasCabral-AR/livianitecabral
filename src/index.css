@@ -11,10 +11,17 @@ code {
 }
 
 @font-face {
-  font-family: vladimir;
-  src: url(fonts/VLADIMIR.TTF)
+  font-family: futurism;
+  src: url(fonts/Futurism.otf)
+}
+@font-face {
+  font-family: futurism-light;
+  src: url(fonts/FuturismL.otf)
 }
 
-.f-vladimir{
-  font-family: vladimir;
+.f-futurism{
+  font-family: futurism;
+}
+.f-futurismL{
+  font-family: futurism-light;
 }

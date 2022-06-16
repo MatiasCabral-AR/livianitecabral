@@ -1,9 +1,10 @@
 .cart-button {
+    width: 12rem;
     margin-bottom: 1em;
     border: none;
     outline: none;
-    color: black;
-    background: #FFFAFA;
+    color: #FFFFFF;
+    background: #565656;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -17,17 +18,17 @@
     content: "";
     background:linear-gradient(
       45deg,
-      #b686fd 0%,
-      #bc90fd 29%,
-      #c59ffe 41%,
-      #cba9fe 49%,
-      #d4b8fe 54%,
-      #dac2fe 58%,
-      #d4b8fe 63%,
-      #cba9fe 68%,
-      #c59ffe 75%,
-      #bc90fd 84%,
-      #b686fd 100%
+      #000000 0%,
+      #1b1b1b 29%,
+      #2c2c2c 41%,
+      #414141 49%,
+      #5d5d5d 54%,
+      #727272 58%,
+      #5d5d5d 63%,
+      #414141 68%,
+      #2c2c2c 75%,
+      #1b1b1b 84%,
+      #000000 100%
     );
     position: absolute;
     top: -2px;
@@ -61,12 +62,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #FFFAFA;
+    background: #565656;
     left: 0;
     top: 0;
     border-radius: 10px;
   }
 .cart-button:hover{
-    font-weight: 800;
-    color: black;
+    font-weight: 700;
+    color: #FFFFFF;
 }

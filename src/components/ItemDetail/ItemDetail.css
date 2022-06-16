@@ -9,11 +9,17 @@
 .left-side-product-box img {
     width: 100%;
 }
+.sub-img{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-.left-side-product-box .sub-img img {
-    margin-top: 5px;
-    width: 83px;
-    height: 100px;
+.sub-img img {
+    border: 2px solid #3a3a3a;
+    margin-top: 1rem;
+    padding: 1px;
+    width: 30%;
 }
 
 .right-side-pro-detail span {

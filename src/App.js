@@ -16,10 +16,9 @@ function App() {
           <BrowserRouter>
             <NavBar/>
             <Routes>
-              <Route path='/' element={<ItemListContainer title='Livianite Lenceria'/>}/>
+              <Route path='/' element={<ItemListContainer title='Nuestros Productos'/>}/>
               <Route path='/category/:category' element={<ItemListContainer/>} />
               <Route path='/product/:id' element={<ItemDetailContainer/>}/>
-              <Route path='/quienes-somos' element={<h1 className='text-center text-success'>Quienes Somos</h1>}/>
               <Route path='*' element={<h1 className='text-center text-warning'>Pagina no encontrada</h1>}/>
               <Route path='/cart' element={<Cart/>} />
             </Routes>

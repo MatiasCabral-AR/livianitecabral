@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
+const ItemCount = ({stock, buttonText, product}) => {
     const [cant, itemCant] = useState(1)
     const {cart, setCart} = useContext(CartContext)
     
@@ -32,8 +32,8 @@ const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
             let checkProduct = cart.find(element => element.id === product.id)
             let checkCant = checkProduct.cant + cant
             if(checkCant > stock){
-                console.log(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)
-                /*toast(`Error!, El stock es de : ${product.quantity}. Chequea el Carrito y vuelve a intentar`)*/
+                console.log(`Error!, El stock es de : ${product.stock}. Chequea el Carrito y vuelve a intentar`)
+                /*toast(`Error!, El stock es de : ${product.stock}. Chequea el Carrito y vuelve a intentar`)*/
             }else{
                 console.log('Contenido del Carrito Actualizado')
                 /*toast('Contenido del Carrito Actualizado')*/
@@ -46,7 +46,7 @@ const ItemCount = ({stock, buttonDisplay, buttonText, product}) => {
     return (
             <div className='d-flex flex-column justify-content-center'>
                 <ToastContainer/>
-                {product.quantity > 0 ? 
+                {product.stock > 0 ? 
                 <>
                     <Container className='d-flex justify-content-center'>
                         <Button size='m' onClick={decrementCant} variant="dark">-</Button>
