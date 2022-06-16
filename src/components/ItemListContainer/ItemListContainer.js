@@ -14,7 +14,7 @@ const ItemListContainer = ({title, setCart}) => {
     useEffect(() => {
         setLoad(true)
         // Definimos variable de referencia segun ternario (si hay categoria buscamos con query, sino mostramos todo)
-        const collectionReference = category ? query(collection(database, 'products'), where('category' , '==', category)) : collection(database, 'products')
+        const collectionReference = (category ? (category === 'Sale' ? query(collection(database, 'products'), where('discount' , '>', 0)) : query(collection(database, 'products'), where('category' , '==', category))) : collection(database, 'products'))
         getDocs(collectionReference).then(result => {
             const products = result.docs.map(doc => {
                 return {id : doc.id, ...doc.data()}
@@ -22,21 +22,22 @@ const ItemListContainer = ({title, setCart}) => {
             setProducts(products)
         }).catch(error => {
             console.log(error)
-        }).finally(() => setLoad(false))
+        }).finally(() => {setLoad(false)})
     }, [category])
     // Definimos titulo por defecto (Nuestros Productos) o titulo de categoria a mostrar
     let titulo = title ? title : `${category}`
     // Ternario que define el render segun el estado de (load)
-    { load ? 
+    if(load){ 
+        return(
         <section className='d-flex flex-column justify-content-center align-items-center'>
             <h1 className="f-futurismL display-2 text-center text-dark">{titulo}</h1>
             <Loader/>
         </section>
-      : <section className='d-flex flex-column justify-content-center align-items-center'>
-            <h1 className="f-futurismL display-2 text-center text-dark">{titulo}</h1>
-            <h1 className="f-futurismL display-2 text-center text-dark">{titulo}</h1>
-            <ProductList products={productsArray} setCart={setCart}/>
-        </section>
-    }   
+    )}
+    return(<section className='d-flex flex-column justify-content-center align-items-center'>
+                <h1 className="f-futurismL display-2 text-center text-dark">{titulo}</h1>
+                <ProductList products={productsArray} setCart={setCart}/>
+            </section>
+    )   
 }
 export default ItemListContainer

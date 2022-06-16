@@ -7,65 +7,29 @@
 .navbar, .offcanvas{
     background-color: #ffffff;
 }
+
 .fullnav{
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .navbar-brand, .offcanvas-title{
     font-size: 3rem;
 }
-.slideIn {
-    -webkit-animation-name: slideIn;
-    animation-name: slideIn;
-}
-.nav-link, .nav-link:focus, .nav-link:hover{
-    color: black;
-}
-.svg-logo{
-  max-width: 100%;
-  height: auto;
-  color: aqua;
-}
 
-@media (min-width: 768px) {
-    .animate {
-      animation-duration: 0.3s;
-      -webkit-animation-duration: 0.3s;
-      animation-fill-mode: both;
-      -webkit-animation-fill-mode: both;
-    }
-  }
-  
-@keyframes slideIn {
-    0% {
-      transform: translateY(1rem);
-      opacity: 0;
-    }
-  
-    100% {
-      transform: translateY(0rem);
-      opacity: 1;
-    }
-  
-    0% {
-      transform: translateY(1rem);
-      opacity: 0;
-    }
-  }
-  
-@-webkit-keyframes slideIn {
-    0% {
-      -webkit-transform: transform;
-      -webkit-opacity: 0;
-    }
-  
-    100% {
-      -webkit-transform: translateY(0);
-      -webkit-opacity: 1;
-    }
-  
-    0% {
-      -webkit-transform: translateY(1rem);
-      -webkit-opacity: 0;
-    }
-  }
-  
+
+.underline:after{
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: #000000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.underline:hover::after {
+  width: 100%; 
+  left: 0; 
+}

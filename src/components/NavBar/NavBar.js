@@ -14,16 +14,16 @@ const NavBar = () => {
           <Navbar.Toggle aria-controls='offcanvasNavbar-expand-lg '/>
           <Navbar.Offcanvas id='offcanvasNavbar-expand-lg' aria-labelledby='offcanvasNavbarLabel-expand-lg' placement="end" >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title className='f-vladimir mx-auto' id='offcanvasNavbarLabel-expand-lg'>Menu</Offcanvas.Title>
+              <Offcanvas.Title className='f-futurism mx-auto' id='offcanvasNavbarLabel-expand-lg'>Menu</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-center flex-grow-1 pb-1">
-                <NavLink to='/' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none text-dark f-futurismL mx-3'}>Home</NavLink>
-                <NavLink to='/category/Ofertas' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Ofertas</NavLink>
-                <NavLink to='/category/Buzo' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Buzos</NavLink>
-                <NavLink to='/category/Remera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Remeras</NavLink>
-                <NavLink to='/category/Pantalon' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Pantalones</NavLink>
-                <NavLink to='/category/Campera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark mx-3'}>Camperas</NavLink>
+                <NavLink to='/' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none text-dark f-futurismL px-3 underline'}>Home</NavLink>
+                <NavLink to='/category/Sale' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark px-3 underline'}>🔥Sale</NavLink>
+                <NavLink to='/category/Buzo' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark px-3 underline'}>Buzos</NavLink>
+                <NavLink to='/category/Remera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark px-3 underline'}>Remeras</NavLink>
+                <NavLink to='/category/Pantalon' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark px-3 underline'}>Pantalones</NavLink>
+                <NavLink to='/category/Campera' className={({isActive}) => isActive ? 'd-none' : 'text-decoration-none f-futurismL text-dark px-3 underline'}>Camperas</NavLink>
                 <Link to='/cart' className='position-absolute end-0 align-items-center d-none d-lg-flex text-dark'><DivLogo logoprops='fas fa-shopping-cart fa-2xl me-3' /></Link>
               </Nav>
             </Offcanvas.Body>
