@@ -1,9 +1,10 @@
 .main-section {
-    background-color: #FFFAFA;
+    background-color: #565656;
     position: absolute;
     left: 50%;
     right: 50%;
     transform: translate(-50%, 5%);
+    
 }
 
 .left-side-product-box img {
@@ -12,7 +13,7 @@
 .sub-img{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .sub-img img {
@@ -22,15 +23,10 @@
     width: 30%;
 }
 
-.right-side-pro-detail span {
-    font-size: 15px;
+.right-side-pro-detail{
+    color: #000;
 }
 
 .right-side-pro-detail p {
     font-size: 25px;
-    color: #3a3a3a;
-}
-
-.right-side-pro-detail .price-pro {
-    color: #b686fd;
 }

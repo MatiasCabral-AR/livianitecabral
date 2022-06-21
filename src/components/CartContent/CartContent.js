@@ -1,4 +1,3 @@
-import { Button } from "bootstrap";
 import CartContext from "../../context/CartContext";
 import { useContext } from "react";
 
@@ -34,7 +33,7 @@ function CartContent(){
                     <p className="cart-product-price-total">${(product.price*product.cant)}</p>
                 </div>
                 <div className="cart-product-buttons">
-                    <button className="cart-payment-buyButton-button" onClick={() => {deleteProduct(product)}}>BORRAR PRODUCTO</button>
+                    <button className="cart-button" onClick={() => {deleteProduct(product)}}>Borrar Producto</button>
                 </div>
             </div>
             )

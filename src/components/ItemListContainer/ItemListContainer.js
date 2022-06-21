@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 import { database } from "../../firebase"
 
 
-const ItemListContainer = ({title, setCart}) => {
+const ItemListContainer = ({title}) => {
     const [productsArray, setProducts] = useState([])
     const {category} = useParams()
     const [load, setLoad] = useState(true) 
@@ -36,7 +36,7 @@ const ItemListContainer = ({title, setCart}) => {
     )}
     return(<section className='d-flex flex-column justify-content-center align-items-center'>
                 <h1 className="f-futurismL display-2 text-center text-dark">{titulo}</h1>
-                <ProductList products={productsArray} setCart={setCart}/>
+                <ProductList products={productsArray}/>
             </section>
     )   
 }
